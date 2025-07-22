@@ -1,0 +1,12 @@
+[default]
+
+    LEVEL_NAME = "DEBUG"
+
+[development]
+
+    [development.logs]
+        LEVEL_NAME = "DEBUG"
+        FORMAT = '[%(asctime)s] #%(levelname)-8s %(filename)s:%(lineno)d - %(name)s - %(message)s'
+    
+    [development.bot]
+        PARSE_MODE = 'HTML'
