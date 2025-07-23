@@ -1,6 +1,49 @@
 [project]
 name = "telegram-bot-template"
 version = "0.1.0"
-description = "descrtiption" 
+description = "Template for creating aiogram telegram bots" 
 readme = "README.md"
 requires-python = ">=3.11"
+dependencies = [
+    "aiogram>=3.20.0.post0",
+    "aiogram-dialog>=2.3.1",
+    "dynaconf>=3.2.10",
+    "python-dotenv>=1.0.1", 
+]
+authors = [
+    { name = "Kuznetsov Aleksandr", email = "ku.alex.bo@gmail.com" }
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "flake8",
+    "isort",
+]
+
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_first_party = ["app"] 
+skip = ["migrations", ".venv", "venv"]
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = [
+    "E203",
+    "W503",
+]
+exclude = [
+    ".git",
+    "__pycache__",
+    ".venv",
+    "venv",
+    "migrations",
+    "build",
+    "dist",
+]
