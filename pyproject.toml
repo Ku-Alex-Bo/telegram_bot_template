@@ -21,6 +21,9 @@ dev = [
     "isort",
 ]
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
 
 [tool.black]
 line-length = 88

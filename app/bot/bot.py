@@ -2,6 +2,9 @@ import asyncio
 from app.bot.logs.logger import logger
 from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
+from aiogram.enums import ParseMode
+from app.bot.handlers.commands import commands_router
+from config.config import settings
 
 
 async def main():
@@ -13,7 +16,8 @@ async def main():
             parse_mode=ParseMode(settings.bot.parse_mode)
         ),
     )
-    dp = Dispatcher(storage=storage)
+    dp = Dispatcher()
+    dp.include_router(commands_router)
 
     try:
         await dp.start_polling(bot)
