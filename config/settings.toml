@@ -1,12 +1,27 @@
-[default]
+###############################################################################
+# General settings                                         
+###############################################################################
 
-    LEVEL_NAME = "DEBUG"
+[default.logs]
+level  = "INFO"
+format = "[%(asctime)s] %(levelname)-8s %(name)s: %(message)s"
 
-[development]
+[default.bot]
+parse_mode = "HTML"
 
-    [development.logs]
-        LEVEL_NAME = "DEBUG"
-        FORMAT = '[%(asctime)s] #%(levelname)-8s %(filename)s:%(lineno)d - %(name)s - %(message)s'
-    
-    [development.bot]
-        PARSE_MODE = 'HTML'
+###############################################################################
+# Development settings                                         
+###############################################################################
+
+[development.logs]
+# переопределяем только уровень и формат
+level  = "DEBUG"
+format = "[%(asctime)s] #%(levelname)-8s %(filename)s:%(lineno)d › %(message)s"
+
+###############################################################################
+# Production settings                                         
+###############################################################################
+
+[production.logs]
+    level  = "WARNING"
+    format = "[%(asctime)s] [%(levelname)s] %(message)s"
