@@ -1,10 +1,18 @@
-from aiogram import Bot, Router
+from aiogram import Bot, Router, html
 from aiogram.filters import Command, CommandStart
+from aiogram.types import Message
+from fluentogram import TranslatorRunner
 
 commands_router = Router()
 
 @commands_router.message(CommandStart())
-async def start_command(message):
-    await message.answer("Welcome! Use /help to see available commands.")
+async def start_command(
+    message: Message,
+    i18n: TranslatorRunner,
+):
+    username = html.quote(message.from_user.full_name)
+    await message.answer(
+        text=i18n.welcome.text(username=username)
+    )
 
 
