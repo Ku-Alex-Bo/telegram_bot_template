@@ -1,3 +1,5 @@
+.PHONY: install setup-env run
+
 install:
 	pip install .
 
