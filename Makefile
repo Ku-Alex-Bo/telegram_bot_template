@@ -1,4 +1,4 @@
-.PHONY: install setup-env run
+.PHONY: install setup-env setup-venv run
 
 install:
 	pip install .
