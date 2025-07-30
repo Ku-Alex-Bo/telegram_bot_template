@@ -20,7 +20,6 @@ cd telegram_bot_template
 ```
 
 2. **Create virtual environment:**
-- Firstly:
 ```bash
 setup-venv
 ```
