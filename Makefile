@@ -1,8 +1,17 @@
-.PHONY: install setup-env setup-venv run
+.PHONY: install install-dev setup-env setup-venv run
+
+setup-venv:
+	python3 -m venv venv
+	@echo "✅  Virtual environment created."
+	@echo "➡️  Run 'source venv/bin/activate' (Linux/macOS) or 'venv\\Scripts\\activate' (Windows) to activate it."
 
 install:
 	pip install .
 	@echo "✅ Requirements installed"
+
+install-dev:
+	pip install .
+	@echo "✅ All Requirements installed"
 
 setup-env:
 	@if [ ! -f .env ]; then \
@@ -10,11 +19,6 @@ setup-env:
 	else \
 		echo "⚠️ .env file already exists"; \
 	fi
-
-setup-venv:
-	python3 -m venv venv
-	@echo "✅  Virtual environment created."
-	@echo "➡️  Run 'source venv/bin/activate' (Linux/macOS) or 'venv\\Scripts\\activate' (Windows) to activate it."
 
 run:
 	python main.py
