@@ -6,6 +6,7 @@ from aiogram.enums import ParseMode
 from fluentogram import TranslatorHub
 
 from app.bot.handlers.commands import commands_router
+from app.bot.handlers.errors import error_router
 from app.bot.middlewares.i18n import TranslatorRunnerMiddleware
 from app.bot.utils.i18n import create_translator_hub
 from config.config import settings
@@ -30,6 +31,7 @@ async def main():
 
     dp = Dispatcher()
     dp.include_router(commands_router)
+    dp.include_router(error_router)
 
     dp.update.middleware(TranslatorRunnerMiddleware())
     dp.errors.middleware(TranslatorRunnerMiddleware())
