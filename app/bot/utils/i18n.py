@@ -1,8 +1,6 @@
 from fluent_compiler.bundle import FluentBundle
 from fluentogram import FluentTranslator, TranslatorHub
 
-from config.config import settings
-
 DIR_PATH = "locales"
 
 

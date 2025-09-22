@@ -1,5 +1,5 @@
-from aiogram import Bot, Router, html
-from aiogram.filters import Command, CommandStart
+from aiogram import Router, html
+from aiogram.filters import CommandStart
 from aiogram.types import Message
 from fluentogram import TranslatorRunner
 

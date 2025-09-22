@@ -1,15 +1,14 @@
-import asyncio
+import logging
+
 from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
-from app.bot.handlers.commands import commands_router
-from config.config import settings
 from fluentogram import TranslatorHub
-from app.bot.utils.i18n import create_translator_hub
+
+from app.bot.handlers.commands import commands_router
 from app.bot.middlewares.i18n import TranslatorRunnerMiddleware
-
-import logging
-
+from app.bot.utils.i18n import create_translator_hub
+from config.config import settings
 
 logging.basicConfig(
     level=getattr(logging, settings.logs.level.upper(), logging.INFO),

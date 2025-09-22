@@ -1,15 +1,8 @@
-from sqlalchemy import (
-    Column, 
-    Integer, 
-    BigInteger, 
-    Boolean, 
-    Enum, 
-    DateTime, 
-    ForeignKey
-)
-from sqlalchemy.orm import relationship
-from datetime import datetime
 import enum
+from datetime import datetime
+
+from sqlalchemy import BigInteger, Boolean, Column, DateTime, Enum, ForeignKey, Integer
+from sqlalchemy.orm import relationship
 
 
 class UserRole(str, enum.Enum):
@@ -33,12 +26,12 @@ class UserModel(Base):
     )
 
     tg_id = Column(
-        BigInteger, 
+        BigInteger,
         unique=True,
     )
 
     joined_at = Column(
-        DateTime, 
+        DateTime,
         default=datetime.utcnow,
     )
 
@@ -53,8 +46,8 @@ class UserModel(Base):
     )
 
     settings = relationship(
-        "UserSettings", 
-        uselist=False, 
+        "UserSettings",
+        uselist=False,
         back_populates="user"
     )
 
@@ -72,7 +65,7 @@ class UserSettings(Base):
     )
 
     user = relationship(
-        "UserModel", 
-        uselist=False, 
+        "UserModel",
+        uselist=False,
         back_populates="settings"
     )

@@ -15,33 +15,22 @@ authors = [
     { name = "Kuznetsov Aleksandr", email = "ku.alex.bo@gmail.com" }
 ]
 
-[project.optional-dependencies]
-dev = [
-    "black",
-    "flake8",
-    "isort",
-]
+[tool.poetry.group.dev.dependencies]
+black = "*"
+ruff = ">=0.13.1"
+mypy = "*"
 
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["app*"]
 
-[tool.black]
+[tool.ruff]
 line-length = 88
-target-version = ["py311"]
+target-version = "py311"
 
-[tool.isort]
-profile = "black"
-line_length = 88
-known_first_party = ["app"] 
-skip = ["migrations", ".venv", "venv"]
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
 
-[tool.flake8]
-max-line-length = 88
-extend-ignore = [
-    "E203",
-    "W503",
-]
 exclude = [
     ".git",
     "__pycache__",
@@ -51,3 +40,5 @@ exclude = [
     "build",
     "dist",
 ]
+
+ignore = ["E501"]
