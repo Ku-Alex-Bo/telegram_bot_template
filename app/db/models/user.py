@@ -2,7 +2,11 @@ import enum
 from datetime import datetime
 
 from sqlalchemy import BigInteger, Boolean, Column, DateTime, Enum, ForeignKey, Integer
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import DeclarativeBase, relationship
+
+
+class Base(DeclarativeBase):
+    pass
 
 
 class UserRole(str, enum.Enum):
