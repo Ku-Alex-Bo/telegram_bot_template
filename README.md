@@ -59,7 +59,6 @@ telegram_bot_template/
 ├── main.py                   # Application entrypoint
 ├── Makefile                  # Common development commands
 ├── pyproject.toml            # Project metadata and dependencies
-├── poetry.lock               # Locked dependencies
 └── README.md
 ```
 ## 🌍 Internationalization (i18n)
