@@ -38,7 +38,7 @@ make run
 ```
 
 ## 📂 Project Structure
-
+```
 telegram_bot_template/
 ├── app/
 │   └── bot/
@@ -61,7 +61,7 @@ telegram_bot_template/
 ├── pyproject.toml            # Project metadata and dependencies
 ├── poetry.lock               # Locked dependencies
 └── README.md
-
+```
 ## 🌍 Internationalization (i18n)
 
 The template includes built-in internationalization using fluentogram.
@@ -72,11 +72,11 @@ The template includes built-in internationalization using fluentogram.
 - Easy to add new languages
 
 Translations are stored in the `locales/` directory:
-
+```
 locales/
 ├── en/
 └── ru/
-
+```
 To add a new language:
 1. Create a new folder in `locales/` (e.g. `de/`)
 2. Add Fluent translation files
