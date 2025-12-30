@@ -6,7 +6,8 @@
 - `aiogram-dialog` — Dialogs & FSM handling
 - `fluentogram` —  Internationalization (i18n) with Fluent
 - `dynaconf` — Flexible and environment-based settings management
-- `isort`, `black`, `flake8` - Code formatting and linting
+- `uv` - Packet manager
+- `ruff` - Code formatting and linting
 
 ---
 
@@ -19,18 +20,9 @@ git clone https://github.com/Ku-Alex-Bo/telegram_bot_template
 cd telegram_bot_template
 ```
 
-2. **Create virtual environment:**
+2. **Install uv**
 ```bash
-setup-venv
-```
-Then activate it:
-- *Windows*
-```bash
-venv\Scripts\activate
-```
-- *Mac/Linux*
-```bash
-source venv/bin/activate
+pip install uv
 ```
 
 3. **Set up environment variables**

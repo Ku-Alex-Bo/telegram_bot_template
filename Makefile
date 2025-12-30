@@ -1,17 +1,4 @@
-.PHONY: install install-dev setup-env setup-venv run
-
-setup-venv:
-	python3 -m venv venv
-	@echo "✅  Virtual environment created."
-	@echo "➡️  Run 'source venv/bin/activate' (Linux/macOS) or 'venv\\Scripts\\activate' (Windows) to activate it."
-
-install:
-	pip install .
-	@echo "✅ Requirements installed"
-
-install-dev:
-	pip install .
-	@echo "✅ All Requirements installed"
+.PHONY: setup-env run
 
 setup-env:
 	@if [ ! -f .env ]; then \
@@ -21,4 +8,7 @@ setup-env:
 	fi
 
 run:
-	python main.py
+	uv run python main.py
+
+test:
+	uv run pytest
