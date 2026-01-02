@@ -14,15 +14,14 @@ class TranslatorRunnerMiddleware(BaseMiddleware):
         self,
         handler: Callable[[TelegramObject, dict[str, Any]], Awaitable[Any]],
         event: TelegramObject,
-        data: dict[str, Any]
+        data: dict[str, Any],
     ) -> Any:
-
-        user: User = data.get('event_from_user')
+        user: User | None = data.get("event_from_user")
 
         if user is None:
             return await handler(event, data)
 
-        hub: TranslatorHub = data.get('translator_hub')
-        data['i18n'] = hub.get_translator_by_locale(locale=user.language_code)
+        hub: TranslatorHub = data.get("translator_hub")
+        data["i18n"] = hub.get_translator_by_locale(locale=user.language_code)
 
         return await handler(event, data)

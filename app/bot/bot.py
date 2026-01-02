@@ -17,14 +17,13 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+
 async def main():
     logger.info("<=== | Starting bot |===>")
 
     bot = Bot(
         token=settings.bot_token,
-        default=DefaultBotProperties(
-            parse_mode=ParseMode(settings.bot.parse_mode)
-        ),
+        default=DefaultBotProperties(parse_mode=ParseMode(settings.bot.parse_mode)),
     )
 
     translator_hub: TranslatorHub = create_translator_hub()
