@@ -1,0 +1,41 @@
+name: run
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+
+    steps:       
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      - name: Install dependencies
+        run: |
+          uv sync --dev
+
+      - name: Ruff
+        run: |
+          uv run ruff check .
+
+      - name: Mypy
+        run: |
+          uv run mypy .
+
+      - name: Pytest
+        run: |
+          uv run pytest
