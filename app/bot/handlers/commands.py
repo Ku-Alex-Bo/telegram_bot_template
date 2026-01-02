@@ -30,4 +30,4 @@ async def help_cmd(
     message: Message,
     i18n: TranslatorRunner,
 ):
-    await message.answer(text=i18n.help.text)
+    await message.answer(text=i18n.help.text())
