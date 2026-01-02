@@ -1,3 +1,8 @@
+"""
+Exceptions handlers
+"""
+
+
 from aiogram import Router
 from aiogram.filters.exception import ExceptionTypeFilter
 from aiogram.types.error_event import ErrorEvent
