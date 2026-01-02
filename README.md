@@ -56,6 +56,7 @@ telegram_bot_template/
 │   ├── en/                   # English translations
 │   └── ru/                   # Russian translations
 │
+├── tests/                    # Pytest folder
 ├── main.py                   # Application entrypoint
 ├── Makefile                  # Common development commands
 ├── pyproject.toml            # Project metadata and dependencies
@@ -90,4 +91,4 @@ make setup-env  # Create .env file
 
 ## 📄 License
 
-MIT
+This project is licensed under the MIT License.
