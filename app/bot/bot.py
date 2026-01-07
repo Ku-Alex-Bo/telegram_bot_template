@@ -18,7 +18,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-async def main():
+async def main() -> None:
     logger.info("<=== | Starting bot |===>")
 
     bot = Bot(
