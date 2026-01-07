@@ -15,12 +15,8 @@ async def start_cmd(
     if user is None:
         return
 
-    username = user.full_name
-
-    if username:
-        text = i18n.welcome.text(username=username)
-    else:
-        text = i18n.welcome.text.stranger
+    username = user.full_name or i18n.stranger()
+    text = i18n.welcome.text(username=username)
 
     await message.answer(text=text)
 

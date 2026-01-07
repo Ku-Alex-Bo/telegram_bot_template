@@ -1,5 +1,6 @@
+stranger = Stranger
+
 welcome-text = Hello, { $username }!
-welcome-text-stranger = Hello, Stranger!
 
 help-text = 📄 This bot is simple example.
 
